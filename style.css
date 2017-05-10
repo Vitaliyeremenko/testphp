@@ -1,0 +1,75 @@
+body{
+    background: lightcyan;
+}
+.todolist{
+    width: 800px;
+    margin: 150px auto ;
+}
+.forlist{
+    list-style: none;
+}
+li{
+    display: block;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 50px;
+    background: white;
+    position: relative;
+    margin: 10px;
+    box-shadow: 8px 5px 19px -3px;
+    animation: show 1s;
+}
+@keyframes show {
+    0%{
+        left: -100%;
+        opacity: 0;
+    }
+
+
+    100%{
+        opacity: 1;
+        left: 0;
+    }
+
+
+}
+
+/*.xdebug-error{*/
+    /*display: none;*/
+/*}*/
+li .task,
+.preview-task{
+    position: absolute;
+    right:0;
+    top:0;
+    width: 80%;
+    border: none;
+}
+li[data-state="1"] .task{
+    text-decoration: line-through;
+    color: red;
+}
+.preview{
+    display: none;
+
+
+}
+.preview li{
+    width: 700px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+
+}
+.preview.active{
+
+    display: block;
+    position: fixed;
+    top:0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+}
